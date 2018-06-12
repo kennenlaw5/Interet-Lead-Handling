@@ -5,6 +5,7 @@ function leadHandler() {
   var source = ss.getSheetByName("New Lead Activity");
   // change this upon change of month
   var target = ss.getSheetByName("June");
+  ss.setActiveSheet(target);
   var input;
   
   var date = new Date().toLocaleDateString();
