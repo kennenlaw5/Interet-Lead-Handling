@@ -83,21 +83,23 @@ function leadHandler() {
   count = 0;
   for (i = 0; i < arr.length; i++) {
     lost = false;
-    if (arr[i][1].toLocaleDateString() != date) {  
-      //Logger.log("in if statement"); 
-      count++;
-      arr[i][1] = date;
-      arr[i][4] = "8:00";
-      for (var j = 0; j < previousDay.length; j++) {
-        if (previousDay[j][0].toLowerCase() == arr[i][2].toLowerCase()) { // compare all previous names to 1 of today's names
-          lost = true;
-          //Logger.log(previousDay[j][0].toLowerCase());
-          count--;
+    if (arr[i][1].toLocaleDateString() != date) {
+      if(current==0){
+        //Logger.log("in if statement"); 
+        count++;
+        arr[i][1] = date;
+        arr[i][4] = "8:00";
+        for (var j = 0; j < previousDay.length; j++) {
+          if (previousDay[j][0].toLowerCase() == arr[i][2].toLowerCase()) { // compare all previous names to 1 of today's names
+            lost = true;
+            //Logger.log(previousDay[j][0].toLowerCase());
+            count--;
+          }
         }
-      }
-      if (lost == false) {
-        final[final.length] = arr[i];
-        final[final.length-1][0] = final.length + current;
+        if (lost == false) {
+          final[final.length] = arr[i];
+          final[final.length-1][0] = final.length + current;
+        }
       }
     } else {
       final[final.length] = arr[i];
