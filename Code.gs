@@ -1,4 +1,5 @@
-function myFunction() {
+function leadHandler() {
+  //Created by Kennen Lawrence and Sean Lowe
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var ui = SpreadsheetApp.getUi();
   var source = ss.getSheetByName("New Lead Activity");
