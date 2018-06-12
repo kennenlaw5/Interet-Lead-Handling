@@ -113,8 +113,8 @@ function leadHandler() {
   var currentDay = target.getRange(input, 6, final.length, 3).getValues();
   for (i = 0; i < final.length; i++) {
     for (j = 0; j < 3; j++) {
-      if (currentDay[i][j] == "Yes") {
-        final[i][5+j] = "Yes";
+      if (currentDay[i][j] != "No") {
+        final[i][5+j] = currentDay[i][j];
       }
     }
   }
