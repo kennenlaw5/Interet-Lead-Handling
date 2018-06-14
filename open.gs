@@ -6,6 +6,7 @@ function onOpen() {
   var row = ss.getSheetByName(sheetName).getRange(1,16).getValue();
   var range = ss.getSheetByName(sheetName).getRange(row+27,1);
   ss.getSheetByName(sheetName).setActiveRange(range);
+  range.getValue();
   range = ss.getSheetByName(sheetName).getRange(row,1);
   ss.getSheetByName(sheetName).setActiveRange(range);
 }
