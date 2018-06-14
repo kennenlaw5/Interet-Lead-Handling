@@ -4,7 +4,8 @@ function leadHandler() {
   var ui = SpreadsheetApp.getUi();
   var source = ss.getSheetByName("New Lead Activity");
   // change this upon change of month
-  var target = ss.getSheetByName("June");
+  var sheetName = "June";
+  var target = ss.getSheetByName(sheetName);
   ss.setActiveSheet(target);
   var input;
   

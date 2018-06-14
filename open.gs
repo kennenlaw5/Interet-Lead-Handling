@@ -2,6 +2,12 @@ function onOpen() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('Utilities').addSubMenu(ui.createMenu('Contact Kennen').addItem('By Phone','menuItem1').addItem('By Email','menuItem2')).addItem('Import Leads','leadHandler').addToUi();
+  var sheetName = "June";
+  var row = ss.getSheetByName(sheetName).getRange(1,16).getValue();
+  var range = ss.getSheetByName(sheetName).getRange(row+27,1);
+  ss.getSheetByName(sheetName).setActiveRange(range);
+  range = ss.getSheetByName(sheetName).getRange(row,1);
+  ss.getSheetByName(sheetName).setActiveRange(range);
 }
 function menuItem1() {
   SpreadsheetApp.getUi().alert('Call or text (720) 317-5427');
